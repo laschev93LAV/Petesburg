@@ -22,13 +22,14 @@
           class="header-logo"
           src="images/sankt-petersburg-seeklogo.png"
           alt="Логотип Санкт-Петербурга"
+          width="50"
         />
         <p>Санкт-Петербург</p>
       </div>
       <nav class="nav">
-        <input id="burger-toggle" type="checkbox">
+        <input id="burger-toggle" type="checkbox" />
         <label for="burger-toggle">
-            <span></span>
+          <span></span>
         </label>
         <ul class="nav-link">
           <li><a href="#1" rel="noopener">Достопримечательности</a></li>
@@ -39,12 +40,22 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="hero">
         <h1>Северная венеция</h1>
-        <!-- <img src="images/IMG_0165.JPG" alt="Разведенные мосты над Невой" /> -->
-        <p>От Невы до малых каналов: исследуем Северную Венецию</p>
-        <label for="button-learn_more">Узнать больше</label>
-        <button class="button" id="button-learn_more">↑</button>
+        <img
+          class="hero-image"
+          src="images/1.webp"
+          alt="Разведенные мосты над Невой"
+        />
+        <div class="CTA-box">
+          <p>От Невы до малых каналов: исследуем Северную Венецию</p>
+          <div class="CTA-box-button">
+            <label class="postscript" for="button-learn_more"
+              >Узнать больше</label
+            >
+            <button class="CTA-button" id="button-learn_more">↑</button>
+          </div>
+        </div>
       </section>
       <article></article>
       <footer></footer>

@@ -20,6 +20,13 @@
     --space-2xl: 48px;
     --space-4xl: 64px;
 
+    --padding-for-circle_button: 9px 12px;
+
+    --border-sides: 1px solid #223344;
+    --border-radius-base: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-xl: 32px;
+
     --font-family-title: 'Cormorant Garamond', Arial, sans-serif;
     --font-family-text: 'inter', Arial, sans-serif;
 
@@ -37,11 +44,16 @@
 body {
     max-width: 1240px;
     margin: 0px auto;
-    padding: var(--space-4xl) var(--space-xl);
+    padding: var(--space-4xl) var(--space-sm);
     background: var(--color-primary-bg);
     font-family: var(--font-family-text);
     font-size: var(--font-size-base);
     line-height: var(--line-height-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-title);
+    line-height: var(--line-height-title);
 }
 
 .header {
@@ -49,6 +61,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 50;
     top: 0;
     right: 0;
     left: 0;
@@ -154,9 +167,61 @@ body {
     right: var(--space-xsm);
     padding: var(--space-sm);
     background: var(--color-accent);
-    border-radius: 16px;
+    border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-base);
     animation: fadeInright 0.3s backwards;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    top: var(--space-xsm);
+    right: var(--space-sm);
+    font-size: var(--font-size-2xl);
+    margin: var(--space-sm) 0;
+}
+
+.CTA-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-sm);
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+}
+
+.CTA-box-button {
+    display: flex;
+    align-items: center;
+    gap: var(--font-size-xsm);
+}
+
+.postscript:hover {
+    text-decoration: underline;
+}
+
+.CTA-button {
+    padding: var(--padding-for-circle_button);
+    border-radius: 50%;
+    border: none;
+    background: var(--color-accent);
+    font-family: inherit;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.CTA-button:hover {
+    transform: scale(1.1) rotate(45deg);
+    background: var(--color-primary);
+    color: var(--color-accent-text);
 }
 
 @keyframes fadeInright {
@@ -183,6 +248,13 @@ body {
     }
     .nav-link {
         display: flex;
+        align-items: center;
         gap: var(--space-base);
+    }
+
+    .nav-link a {
+        border-right: var(--border-sides);
+        border-left: var(--border-sides);
+        padding: 0 var(--space-xsm);
     }
 }
