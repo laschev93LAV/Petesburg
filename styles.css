@@ -214,14 +214,21 @@ h1, h2, h3 {
     border: none;
     background: var(--color-accent);
     font-family: inherit;
+    color: var(--color-text);
     transform: rotate(45deg);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .CTA-button:hover {
-    transform: scale(1.1) rotate(45deg);
+    transform: scale(1.1) rotate(45deg) translateY(-5px);
     background: var(--color-primary);
     color: var(--color-accent-text);
+}
+
+.CTA-button:active {
+    transform: scale(0.98) translateY(0) rotate(180deg);
+
+
 }
 
 @keyframes fadeInright {
