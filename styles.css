@@ -242,22 +242,30 @@ h1, h2, h3 {
     justify-content: flex-start;
     gap: var(--space-base);
     margin: var(--font-size-xl) 0;
-    background: var(--color-negative-bg);
     border-radius: var(--border-radius-base);
+    background: var(--color-accent-bg);
 }
 
 .subtitle {
     width: 18ch;
     padding: var(--space-xsm);
-    background: var(--color-accent-bg);
+    border-right: var(--border-sides-primary-color);
+    border-left: var(--border-sides-primary-color);
     border-radius: var(--border-radius-base);
+    background: var(--color-primary-bg);
     font-size: var(--font-size-xl);
+    text-align: center;
     text-transform: capitalize;
+    color: var(--color-primary);
 }
 
 .subtitle-text {
+    padding: 0 var(--space-xsm);
+    max-width: 15ch;
     font-size: var(--font-size-base);
-    color: var(--color-accent-text);
+    text-align: center;
+    color: var(--color-primary-bg);
+
 }
 
 .about-block {
@@ -268,7 +276,6 @@ h1, h2, h3 {
 
 .about-block-card {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: var(--space-xsm);
     padding: var(--space-sm);
@@ -287,28 +294,18 @@ h1, h2, h3 {
     background: var(--color-card-primary-bg);
 }
 
-#card-primary-bg h3 {
-    border-top: var(--border-sides-primary-color);
-    border-bottom: var(--border-sides-primary-color);
-}
-
 #card-negative-bg {
     background: var(--color-negative-bg);
     color: var(--color-accent-text);
 }
 
-#card-negative-bg h3 {
-    border-top: var(--border-sides-accent-color);
-    border-bottom: var(--border-sides-accent-color);
-}
-
 #card-accent-bg {
     background: var(--color-accent-bg);
+    color: var(--color-primary);
 }
 
-#card-accent-bg h3 {
-    border-top: var(--border-sides-primary-color);
-    border-bottom: var(--border-sides-primary-color);
+#card-primary-bg-last {
+    background: var(--color-card-primary-bg);
 }
 
 .about-block-text {
@@ -318,9 +315,16 @@ h1, h2, h3 {
 }
 
 .about-block-title {
-    font-size: var(--font-size-lg);
     padding: 8px 0;
+    border-top: var(--border-sides-primary-color);
+    border-bottom: var(--border-sides-primary-color);
+    font-size: var(--font-size-lg);
     text-align: center;
+}
+
+#card-negative-bg .about-block-title {
+    border-top: var(--border-sides-accent-color);
+    border-bottom: var(--border-sides-accent-color);
 }
 
 .about-block-list {
@@ -335,6 +339,28 @@ h1, h2, h3 {
     width: 150px;
     height: auto;
 }
+
+.about-block-image-box {
+    padding: var(--space-4xl);
+    background-image: url(images/architecture.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius-xl);
+}
+
+#card-negative-bg .about-block-image-box {
+    background-image: url(images/bridge.svg);
+}
+
+#card-accent-bg .about-block-image-box  {
+    background-image: url(images/museum.svg);
+}
+
+#card-primary-bg-last .about-block-image-box {
+    background-image: url(images/white-night.png);
+}
+
 
 @keyframes fadeInright {
     from {
@@ -369,4 +395,9 @@ h1, h2, h3 {
         border-left: var(--border-sides-primary-color);
         padding: 0 var(--space-xsm);
     }
+
+.about-block {
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+}
+
 }
