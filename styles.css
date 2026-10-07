@@ -184,8 +184,9 @@ h1, h2, h3 {
 }
 
 .hero-image {
+    object-fit: cover;
     max-width: 100%;
-    height: auto;
+    height: 65vh;
     border-radius: var(--border-radius-xl);
 }
 
@@ -335,10 +336,10 @@ h1, h2, h3 {
     font-size: var(--font-size-sm);
 }
 
-.about-block-image {
+/* .about-block-image {
     width: 150px;
     height: auto;
-}
+} */
 
 .about-block-image-box {
     padding: var(--space-4xl);
