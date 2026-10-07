@@ -7,10 +7,14 @@
     --color-primary: #223344;
     --color-accent: #d4a04c;
     --color-primary-bg: #f5f3ef;
+    --color-negative-bg: #223344; 
+    --color-accent-bg: #d4a04c;
     --color-text: #2a2a2a;
     --color-accent-text: #d4a04c;
+    --color-card-primary-bg: #ffffff;
 
     --box-shadow-base:  0 2px 8px 0 #223344;
+    --box-shadow-card: 0 4px 0px 0 #14212f;
 
     --space-xsm: 8px;
     --space-sm: 16px;
@@ -22,7 +26,9 @@
 
     --padding-for-circle_button: 9px 12px;
 
-    --border-sides: 1px solid #223344;
+    --border-sides-accent-color: 1px solid #d4a04c;
+    --border-sides-primary-color: 1px solid #223344;
+
     --border-radius-base: 16px;
     --border-radius-lg: 24px;
     --border-radius-xl: 32px;
@@ -66,7 +72,7 @@ h1, h2, h3 {
     right: 0;
     left: 0;
     padding: 0 var(--space-base);
-    background: var(--color-accent);
+    background: var(--color-accent-bg);
     box-shadow: var(--box-shadow-base);
     
 }
@@ -166,7 +172,7 @@ h1, h2, h3 {
     top: var(--space-4xl);
     right: var(--space-xsm);
     padding: var(--space-sm);
-    background: var(--color-accent);
+    background: var(--color-accent-bg);
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-base);
     animation: fadeInright 0.3s backwards;
@@ -180,6 +186,7 @@ h1, h2, h3 {
 .hero-image {
     max-width: 100%;
     height: auto;
+    border-radius: var(--border-radius-xl);
 }
 
 .hero h1 {
@@ -212,7 +219,7 @@ h1, h2, h3 {
     padding: var(--padding-for-circle_button);
     border-radius: 50%;
     border: none;
-    background: var(--color-accent);
+    background: var(--color-accent-bg);
     font-family: inherit;
     color: var(--color-text);
     transform: rotate(45deg);
@@ -221,14 +228,112 @@ h1, h2, h3 {
 
 .CTA-button:hover {
     transform: scale(1.1) rotate(45deg) translateY(-5px);
-    background: var(--color-primary);
+    background: var(--color-negative-bg);
     color: var(--color-accent-text);
 }
 
 .CTA-button:active {
     transform: scale(0.98) translateY(0) rotate(180deg);
+}
 
+.subtitle-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-base);
+    margin: var(--font-size-xl) 0;
+    background: var(--color-negative-bg);
+    border-radius: var(--border-radius-base);
+}
 
+.subtitle {
+    width: 18ch;
+    padding: var(--space-xsm);
+    background: var(--color-accent-bg);
+    border-radius: var(--border-radius-base);
+    font-size: var(--font-size-xl);
+    text-transform: capitalize;
+}
+
+.subtitle-text {
+    font-size: var(--font-size-base);
+    color: var(--color-accent-text);
+}
+
+.about-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+}
+
+.about-block-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xsm);
+    padding: var(--space-sm);
+    border: var(--border-sides-primary-color);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-block-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--box-shadow-base);
+}
+
+#card-primary-bg {
+    background: var(--color-card-primary-bg);
+}
+
+#card-primary-bg h3 {
+    border-top: var(--border-sides-primary-color);
+    border-bottom: var(--border-sides-primary-color);
+}
+
+#card-negative-bg {
+    background: var(--color-negative-bg);
+    color: var(--color-accent-text);
+}
+
+#card-negative-bg h3 {
+    border-top: var(--border-sides-accent-color);
+    border-bottom: var(--border-sides-accent-color);
+}
+
+#card-accent-bg {
+    background: var(--color-accent-bg);
+}
+
+#card-accent-bg h3 {
+    border-top: var(--border-sides-primary-color);
+    border-bottom: var(--border-sides-primary-color);
+}
+
+.about-block-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.about-block-title {
+    font-size: var(--font-size-lg);
+    padding: 8px 0;
+    text-align: center;
+}
+
+.about-block-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xsm);
+    list-style: none;
+    font-size: var(--font-size-sm);
+}
+
+.about-block-image {
+    width: 150px;
+    height: auto;
 }
 
 @keyframes fadeInright {
@@ -260,8 +365,8 @@ h1, h2, h3 {
     }
 
     .nav-link a {
-        border-right: var(--border-sides);
-        border-left: var(--border-sides);
+        border-right: var(--border-sides-primary-color);
+        border-left: var(--border-sides-primary-color);
         padding: 0 var(--space-xsm);
     }
 }
