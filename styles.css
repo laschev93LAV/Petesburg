@@ -13,7 +13,7 @@
     --color-accent-text: #d4a04c;
     --color-card-primary-bg: #ffffff;
 
-    --box-shadow-base:  0 2px 8px 0 #223344;
+    --box-shadow-base:  0 2px 8px 0 #050b11;
     --box-shadow-card: 0 4px 0px 0 #14212f;
 
     --space-xsm: 8px;
@@ -32,6 +32,7 @@
     --border-radius-base: 16px;
     --border-radius-lg: 24px;
     --border-radius-xl: 32px;
+    --border-radius-2xl: 40px;
 
     --font-family-title: 'Cormorant Garamond', Arial, sans-serif;
     --font-family-text: 'inter', Arial, sans-serif;
@@ -47,10 +48,14 @@
     --line-height-text: 1.6;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    max-width: 1240px;
+    max-width: 100%;
     margin: 0px auto;
-    padding: var(--space-4xl) var(--space-sm);
+    padding: var(--space-4xl) 0;
     background: var(--color-primary-bg);
     font-family: var(--font-family-text);
     font-size: var(--font-size-base);
@@ -61,6 +66,10 @@ body {
 h1, h2, h3 {
     font-family: var(--font-family-title);
     line-height: var(--line-height-title);
+}
+
+section {
+    padding: 0  var(--space-sm);
 }
 
 .header {
@@ -182,9 +191,14 @@ h1, h2, h3 {
 .hero {
     display: flex;
     flex-direction: column;
+    padding: 0 var(--space-sm);
+    border-radius: 0 0 var(--border-radius-2xl) var(--border-radius-2xl);
+    background: var(--color-negative-bg);
+    color: var(--color-accent-text);
 }
 
 .hero-image {
+    align-self: center;
     object-fit: cover;
     max-width: 100%;
     height: 65vh;
@@ -200,7 +214,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: var(--space-sm);
+    margin: var(--space-sm) 0;
     gap: var(--space-sm);
     font-size: var(--font-size-sm);
 }
@@ -228,7 +242,7 @@ h1, h2, h3 {
 
 .CTA-button:hover {
     transform: scale(1.1) rotate(45deg) translateY(-5px);
-    background: var(--color-negative-bg);
+    background: var(--color-primary-bg);
     color: var(--color-accent-text);
 }
 
@@ -241,7 +255,6 @@ h1, h2, h3 {
     align-items: center;
     justify-content: flex-start;
     gap: var(--space-base);
-    margin: var(--font-size-xl) 0;
     border-radius: var(--border-radius-base);
     background: var(--color-accent-bg);
 }
@@ -259,6 +272,13 @@ h1, h2, h3 {
     color: var(--color-primary);
 }
 
+.hero .subtitle {
+    border-right: var(--border-sides-accent-color);
+    border-left: var(--border-sides-accent-color);
+    background: var(--color-negative-bg);
+    color: var(--color-accent-text);
+}
+
 .subtitle-text {
     padding: 0 var(--space-xsm);
     max-width: 15ch;
@@ -268,10 +288,16 @@ h1, h2, h3 {
 
 }
 
+.hero .subtitle-text {
+    color: var(--color-text);
+}
+
 .about-block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: var(--space-base);
+    padding: var(--space-lg) var(--space-base);
+    color: var(--color-text);
 }
 
 .about-block-card {
@@ -290,21 +316,17 @@ h1, h2, h3 {
 }
 
 #card-primary-bg {
-    background: var(--color-card-primary-bg);
+    background: var(--color-primary-bg);
 }
 
 #card-negative-bg {
-    background: var(--color-negative-bg);
-    color: var(--color-accent-text);
+    background: var(--color-accent-bg);
+    color: var(--color-primary);
 }
 
 #card-accent-bg {
     background: var(--color-accent-bg);
     color: var(--color-primary);
-}
-
-#card-primary-bg-last {
-    background: var(--color-card-primary-bg);
 }
 
 .about-block-text {
@@ -315,14 +337,10 @@ h1, h2, h3 {
 
 .about-block-title {
     padding: var(--space-xsm) 0;
-    border-bottom: var(--border-sides-primary-color);
-    border-radius: var(--border-radius-base);
+    /* border-bottom: var(--border-sides-primary-color);
+    border-radius: var(--border-radius-base); */
     font-size: var(--font-size-lg);
     text-align: center;
-}
-
-#card-negative-bg .about-block-title {
-    border-bottom: var(--border-sides-accent-color);
 }
 
 .about-block-list {
@@ -333,12 +351,7 @@ h1, h2, h3 {
     font-size: var(--font-size-sm);
 }
 
-/* .about-block-image {
-    width: 150px;
-    height: auto;
-} */
-
-.about-block-image-box {
+/* .about-block-image-box {
     padding: var(--space-2xl);
     background-image: url(images/architecture.svg);
     background-size: contain;
@@ -357,7 +370,82 @@ h1, h2, h3 {
 
 #card-primary-bg-last .about-block-image-box {
     background-image: url(images/white-night.png);
+} */
+
+.section-main {
+    padding: var(--space-xl) var(--space-sm);
+    background: var(--color-primary-bg);
 }
+
+.attractions-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: var(--space-lg) 0;
+    gap: var(--space-base);
+    color: var(--color-accent-text);
+}
+
+.attractions-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-base);
+    padding: var(--space-base);
+    background: var(--color-negative-bg);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-base);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.attractions-card:hover {
+    transform:translateY(-5px)  scale(1.02);
+}
+
+.attractions-card p {
+    font-size: var(--font-size-sm);
+}
+
+.attractions-image-box {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.attractions-card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xsm) 0;
+    border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+    backdrop-filter: blur(20px);
+    font-size: var(--font-size-lg);
+    text-align: center;
+}
+
+.attractions-image {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 20% 0;
+    border-radius: var(--border-radius-base);
+}
+
+.attractions-card:nth-of-type(2) .attractions-image {
+    object-position: 50% 0;
+}
+
+.attractions-card:nth-of-type(3) .attractions-image {
+    object-position: 40% 0;
+}
+
+.attractions-card:nth-of-type(5) .attractions-image {
+    object-position: 40% 0;
+}
+
+.attractions-card:nth-of-type(6) .attractions-image {
+    object-position: 50% 0;
+}
+
 
 
 @keyframes fadeInright {
@@ -392,5 +480,9 @@ h1, h2, h3 {
         border-right: var(--border-sides-primary-color);
         border-left: var(--border-sides-primary-color);
         padding: 0 var(--space-xsm);
+    }
+
+    .attractions-block {
+        grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
     }
 }
