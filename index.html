@@ -37,7 +37,7 @@
           </li>
           <li><a href="#routes" rel="noopener">Машруты</a></li>
           <li><a href="#gallery" rel="noopener">Галерея</a></li>
-          <li><a href="#1" rel="noopener">Контакты</a></li>
+          <li><a href="#contacts" rel="noopener">Контакты</a></li>
         </ul>
       </nav>
     </header>
@@ -54,12 +54,8 @@
         <div class="CTA-box">
           <p>От Невы до малых каналов: исследуем Северную Венецию</p>
           <div class="CTA-box-button">
-            <label class="postscript" for="button-learn_more"
-              >Узнать больше</label
-            >
-            <button type="button" class="CTA-button" id="button-learn_more">
-              ↑
-            </button>
+            <a class="postscript" href="#routes">Узнать больше</a>
+            <a href="#routes" class="CTA-button"> ↑ </a>
           </div>
         </div>
         <article class="subtitle-card">
@@ -1226,7 +1222,54 @@
           </div>
         </div>
       </section>
-      <footer></footer>
+      <section class="section-footer">
+        <article class="subtitle-card" id="contacts">
+          <h2 class="subtitle">Планируем маршруты вместе</h2>
+          <p class="subtitle-text">Впечатления, которые остаются с вами</p>
+        </article>
+        <form class="feedback-form">
+          <div class="form-group">
+            <label for="name">Имя</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ваше имя"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@mail.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Дата поездки</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="commit">Комментарий</label>
+            <textarea
+              id="commit"
+              name="commit"
+              placeholder="Ваши пожелания..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <label class="checkbox-agree">
+            <input type="checkbox" name="agree" required />
+            <span>Согласие на обработку персональных данных</span>
+          </label>
+          <button class="button-agree" type="submit">Отправить</button>
+        </form>
+        <footer></footer>
+      </section>
     </main>
   </body>
 </html>
