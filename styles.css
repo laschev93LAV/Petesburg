@@ -737,6 +737,19 @@ section {
     outline-offset: 2px;
 }
 
+.to-top {
+    padding: var(--space-xsm) var(--space-sm);
+    border-radius: 50%;
+    position: fixed;
+    bottom: var(--space-base);
+    right: var(--space-base);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    background: var(--color-accent-bg);
+    box-shadow: var(--box-shadow-base);
+}
+
 @keyframes fadeInright {
     from {
         opacity: 0;
