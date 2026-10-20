@@ -595,7 +595,7 @@ section {
     align-items: center;
     justify-items: center;
     gap: var(--space-sm);
-    margin: var(--space-base) 0;
+    margin: var(--space-base) 0 var(--space-lg);
     color: var(--color-accent-text);
 }
 
@@ -737,17 +737,82 @@ section {
     outline-offset: 2px;
 }
 
+.footer-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-base) 0;
+    color: var(--color-accent-text);
+}
+
+.footer-page a {
+    text-decoration: none;
+    color: var(--color-accent-text);
+    font-size: var(--font-size-sm);
+}
+
+.footer-page a:hover .footer-logo span {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xsm);
+}
+
+.footer-logo img {
+    width: 40px;
+    height: auto;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.about-project {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xsm);
+}
+
 .to-top {
     padding: var(--space-xsm) var(--space-sm);
     border-radius: 50%;
     position: fixed;
-    bottom: var(--space-base);
-    right: var(--space-base);
+    bottom: var(--space-4xl);
+    right: var(--space-sm);
     text-decoration: none;
     font-size: var(--font-size-lg);
     color: var(--color-text);
     background: var(--color-accent-bg);
     box-shadow: var(--box-shadow-base);
+    animation: fadeInright 1.2s ease backwards;
+    transition: transform 0.3s ease, color 0.3s ease,
+                background 0.3s ease, outline 0.3s ease;
+}
+
+.to-top:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: var(--color-primary-bg);
+    color: var(--color-accent-text);
+}
+
+.to-top:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.to-top:focus-visible {
+    outline: var(--border-sides-input-color);
+    outline-offset: 2px;
+
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.98) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.2) translateY(-10px);
+    }
 }
 
 @keyframes fadeInright {
@@ -793,6 +858,9 @@ section {
     }
 
     .section-gallery {
+        width: 60vw;
+        height: auto;
+        margin: var(--space-xl) auto 0;
         padding: 0 var(--space-4xl);
     }
 }
