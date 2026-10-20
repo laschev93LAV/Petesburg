@@ -1276,7 +1276,7 @@
             rel="noopener"
           >
             <div class="footer-logo">
-              <img src="/images/github.png" alt="GitHub logo" />
+              <img src="images/github.png" alt="GitHub logo" />
               <span>laschev93LAV</span>
             </div>
           </a>
@@ -1288,5 +1288,22 @@
       </section>
     </main>
     <a class="to-top" href="#top" aria-label="Наверх">↑</a>
+    <script>
+      // Находим абсолютно все теги details внутри секции маршрутов
+      document
+        .querySelectorAll(".routes-section details")
+        .forEach((details) => {
+          details.addEventListener("toggle", (e) => {
+            // Нам нужно, чтобы экран двигался ТОЛЬКО при закрытии (!details.open)
+            // И только если это событие произошло именно на ЭТОМ details (а не прилетело от вложенного)
+            if (!details.open && e.target === details) {
+              details.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+    </script>
   </body>
 </html>

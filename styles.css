@@ -270,6 +270,7 @@ section {
     gap: var(--space-base);
     border-radius: var(--border-radius-base);
     background: var(--color-accent-bg);
+    scroll-margin-top: var(--space-4xl);
 }
 
 .subtitle {
@@ -489,11 +490,13 @@ details[open]::details-content {
     background: var(--color-accent-bg);
     border-radius: var(--border-radius-base);
     box-shadow: var(--box-shadow-base);
+    scroll-margin-top: var(--space-4xl);
 }
 
 .routes-section-title {
     width: 95%;
     position: sticky;
+    z-index: 25;
     top: var(--space-4xl);
     right: 0;
     padding: var(--space-sm);
@@ -542,9 +545,11 @@ details[open]::details-content {
     padding: var(--space-base) var(--space-xsm);
     background: var(--color-primary-bg);
     border-radius: var(--border-radius-base);
+    scroll-margin-top: var(--space-4xl);
 }
 
 #alternative-routes-title {
+    z-index: 15;
     top: var(--space-8xl);
     padding: var(--space-xsm);
     background: var(--color-primary-bg);
