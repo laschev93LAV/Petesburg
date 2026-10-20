@@ -24,6 +24,7 @@
     --space-xl: 40px;
     --space-2xl: 48px;
     --space-4xl: 64px;
+    --space-8xl: 128px;
 
     --padding-for-circle_button: 7px 14px;
 
@@ -55,6 +56,7 @@
 html {
     scroll-behavior: smooth;
     background: var(--color-negative-bg);
+    interpolate-size: allow-keywords;
 }
 
 body {
@@ -469,10 +471,20 @@ section {
     margin: var(--space-base) 0 var(--space-lg);
 }
 
+details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 1s ease, 
+                content-visibility 1s ease;
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
 .routes-section-box {
     position: relative;
-    display: flex;
-    gap: var(--space-base);
     padding: var(--space-sm);
     background: var(--color-accent-bg);
     border-radius: var(--border-radius-base);
@@ -480,11 +492,15 @@ section {
 }
 
 .routes-section-title {
+    width: 95%;
     position: sticky;
     top: var(--space-4xl);
     right: 0;
+    padding: var(--space-sm);
     align-self: flex-start;
     text-align: center;
+    background: var(--color-accent-bg);
+    border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
     font-family: var(--font-family-title);
     font-size: var(--font-size-lg);
     font-weight: 700;
@@ -493,6 +509,7 @@ section {
 
 .routes-section-text-box {
     display: flex;
+    padding-top: var(--space-base);
     flex-direction: column;
     gap: var(--space-sm);
     margin-bottom: var(--space-base);
@@ -522,14 +539,13 @@ section {
 }
 
 .alternative-routes-section-box {
-    display: flex;
-    flex-direction: column;
     padding: var(--space-base) var(--space-xsm);
     background: var(--color-primary-bg);
     border-radius: var(--border-radius-base);
 }
 
 #alternative-routes-title {
+    top: var(--space-8xl);
     padding: var(--space-xsm);
     background: var(--color-primary-bg);
     border-bottom-left-radius: var(--border-radius-base);
