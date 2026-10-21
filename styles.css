@@ -267,7 +267,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--space-base);
     border-radius: var(--border-radius-base);
     background: var(--color-accent-bg);
     scroll-margin-top: var(--space-4xl);
@@ -472,6 +471,8 @@ section {
     margin: var(--space-base) 0 var(--space-lg);
 }
 
+
+/* Не работает на мобильных устройствах */
 details::details-content {
     block-size: 0;
     overflow: clip;
@@ -494,7 +495,6 @@ details[open]::details-content {
 }
 
 .routes-section-title {
-    width: 95%;
     position: sticky;
     z-index: 25;
     top: var(--space-4xl);
@@ -504,10 +504,27 @@ details[open]::details-content {
     text-align: center;
     background: var(--color-accent-bg);
     border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+    list-style: none;
     font-family: var(--font-family-title);
     font-size: var(--font-size-lg);
     font-weight: 700;
     cursor: pointer;
+}
+
+.routes-section-title::-webkit-details-marker {
+    display: none;
+}
+
+.routes-section-title::after {
+    content: '▼';
+    position: absolute;
+    bottom: var(--space-sm);
+    left: var(--space-xsm);
+    transition: transform 0.3s ease;
+}
+
+.routes-section-box[open] > .routes-section-title::after {
+    transform: rotate(180deg);
 }
 
 .routes-section-text-box {
@@ -516,6 +533,16 @@ details[open]::details-content {
     flex-direction: column;
     gap: var(--space-sm);
     margin-bottom: var(--space-base);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1s ease, opacity 0.3s ease;
+}
+
+.routes-section-box[open] .routes-section-text-box {
+    max-height: 2000px;
+    opacity: 1;
+
 }
 
 .routes-section-text-box p {
@@ -542,16 +569,19 @@ details[open]::details-content {
 }
 
 .alternative-routes-section-box {
-    padding: var(--space-base) var(--space-xsm);
+    padding: var(--space-sm);
     background: var(--color-primary-bg);
     border-radius: var(--border-radius-base);
-    scroll-margin-top: var(--space-4xl);
+    scroll-margin-top: var(--space-lg);
+}
+
+.alternative-routes-section-box[open] > .routes-section-title::after{
+    transform: rotate(180deg);
 }
 
 #alternative-routes-title {
     z-index: 15;
     top: var(--space-8xl);
-    padding: var(--space-xsm);
     background: var(--color-primary-bg);
     border-bottom-left-radius: var(--border-radius-base);
     border-bottom-right-radius: var(--border-radius-base);
@@ -795,9 +825,10 @@ details[open]::details-content {
 }
 
 .to-top {
+    position: fixed;
+    z-index: 100;
     padding: var(--space-xsm) var(--space-sm);
     border-radius: 50%;
-    position: fixed;
     bottom: var(--space-4xl);
     right: var(--space-sm);
     text-decoration: none;
