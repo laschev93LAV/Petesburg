@@ -4,19 +4,15 @@
 }
 
 :root {
-    --color-primary: #223344;
-    --color-accent: #d4a04c;
     --color-primary-bg: #f5f3ef;
     --color-negative-bg: #223344; 
     --color-accent-bg: #d4a04c;
     --color-text: #2a2a2a;
     --color-accent-text: #d4a04c;
     --color-placeholder-text: #2a2a2a99;
-    --color-card-primary-bg: #ffffff;
 
     --box-shadow-base:  0 2px 8px 0 #050b11;
-    --box-shadow-card: 0 4px 0px 0 #14212f;
-
+    
     --space-xsm: 8px;
     --space-sm: 16px;
     --space-base: 24px;
@@ -259,10 +255,6 @@ section {
     color: var(--color-accent-text);
 }
 
-.CTA-button:active {
-    transform: scale(0.98) translateY(0) rotate(180deg);
-}
-
 .subtitle-card {
     display: flex;
     align-items: center;
@@ -283,7 +275,7 @@ section {
     font-size: var(--font-size-xl);
     text-align: center;
     text-transform: capitalize;
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 .hero .subtitle, .section-footer .subtitle {
@@ -333,12 +325,12 @@ section {
 
 #card-negative-bg {
     background: var(--color-accent-bg);
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 #card-accent-bg {
     background: var(--color-accent-bg);
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 .about-block-text {
